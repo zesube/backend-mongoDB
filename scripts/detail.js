@@ -14,8 +14,8 @@ addEventListener("DOMContentLoaded", async function () {
 
     let html = ""
     html+= `
-        <h2>Title - ${song.title} </h2>
-        <h2>Artist - ${song.artist} </h3>
+
+        <h3>Artist - ${song.artist} </h3>
         <p>Popularity - ${song.popularity} </hp>
         <p>ReleaseDate - ${song.releaseDate} </p>
 

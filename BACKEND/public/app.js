@@ -1,4 +1,3 @@
-// app.js
 console.log("Backend server starting...");
 
 const express = require("express");
@@ -21,7 +20,9 @@ router.get("/songs", async(req, res) => {
     try {
         const songs = await Song.find({})
         res.send(songs)
-        console.log(songs)
+        console.log(song)
+        res.sendStatus(204)
+  
     }
     catch (err){
         console.log(err)
@@ -39,6 +40,22 @@ router.get("/songs/id:", async (req, res) => {
         res.status(400).send(err)
 
     }
+})
+
+//update is to update an existing record/resource/database entry..it uses a put request
+router.put("/songs/:id", async(req, res) => {
+    //first we need to find and update the song the front end wants us to update.
+    //to do this we need to request the id of the song from request
+    //and the find it in the database and update it
+    try {
+        const song = req.body
+        await Song.updateOne({_id: req.params.id},song)
+        console.log(song)
+    }
+    catch(err) {
+            res.status(400).send(err)
+    }
+    
 })
 
 
