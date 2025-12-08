@@ -31,7 +31,7 @@ router.get("/songs", async(req, res) => {
 })
 
 //Get a single song in the database
-router.get("/songs/id:", async (req, res) => {
+router.get("/songs/:id:", async (req, res) => {
     try{
         const song = await Song.findById(req.params.id)
         res.json(song)
