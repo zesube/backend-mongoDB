@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Song Front End</title>
-    <script src="scripts/delete.js"></script>
+    <script src="scripts/add_song.js"></script>
 </head>
 <body>
     <nav>
         <a href="/index.html">All Songs</a>
         <a href="/add_song.html">Add a Song</a>
-        <a href="/delete.html">Delete Song</a>
     </nav>
-    <h1>Songs</h1>
-    <ul id="list_of_songs">
-        <li>Amore - Fally Ipupa</li>
-        <li>Mrembo - Alikiba</li>
-    </ul>
-    
+    <h1>Delete A Song</h1>
+    <form>
+        <select id ="songDropDown">
+        </select>
 
+        <input type="button", value="Delete", id="deleteBtn">
+        <div id="error"></div>
+    </form>
+    
 </body>
 </html>

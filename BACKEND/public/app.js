@@ -106,9 +106,16 @@ mongoose.connection.once('open', () => {
     })();
 });
 
-// Optional: if connection doesn't open within 15s, log and exit (helps detect network/auth issues)
-setTimeout(() => {
-    if (mongoose.connection.readyState !== 1) {
-        console.error('Mongoose connection did not open within 15s. Current readyState:', mongoose.connection.readyState);
+
+router.delete("/songs/:id", async(req,res) =>{
+    //method or function in mongoose/mongo to delete a single instance of a song or object
+    try {
+            Song.deleteOne({_id: req.params.id})
     }
-}, 15000);
+
+    catch(err){
+        res.status(400).send(err)
+
+    }
+
+})
